@@ -1,0 +1,16 @@
+CREATE TABLE Movies(
+source_id VARCHAR(50) NOT NULL,
+title VARCHAR(200) NOT NULL,
+year INT,
+rate FLOAT,
+source_type VARCHAR(30) NOT NULL,
+url VARCHAR(100) NOT NULL,
+img VARCHAR(255) NOT NULL,
+PRIMARY KEY(source_id)
+);
+
+CREATE TABLE Genres(
+source_id VARCHAR(50) NOT NULL,
+genre VARCHAR(50) NOT NULL,
+PRIMARY KEY(source_id, genre)
+);

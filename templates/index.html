@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block title %}results{% endblock %}
+
+{% block head%}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-6">
+            <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Popular Movies
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        {% for v in movie_videos %}
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <a href="{{v.url}}"><p>{{v.title}} - {{v.year}}</p></a>
+                                    <p>rate: {{v.rate}}</p>
+                                    <a href="{{v.url}}"><img src="{{v.img}}"  alt="{{v.title}}" /></a>
+                                </div>
+                            </div>
+                            <hr />
+                        {% endfor %}
+                        <a href="http://www.imdb.com/chart/moviemeter"><p>>> more</p></a>
+                    </div>
+            </div>
+    </div>
+    <div class="col-lg-6">
+            <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Popular TV Shows
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        {% for v in tv_videos %}
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <a href="{{v.url}}"><p>{{v.title}} - {{v.year}}</p></a>
+                                    <p>rate: {{v.rate}}</p>
+                                    <a href="{{v.url}}"><img src="{{v.img}}"  alt="{{v.title}}" /></a>
+                                </div>
+                            </div>
+                            <hr />
+                        {% endfor %}
+                        <a href="http://www.imdb.com/chart/tvmeter"><p>>> more</p></a>
+                    </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
